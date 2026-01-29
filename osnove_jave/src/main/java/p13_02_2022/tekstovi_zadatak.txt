@@ -6,3 +6,9 @@
   naredbe koje smo radili.
 • Commit-ujte ovu kao promenu "Predavanja 13.05 Git Zadatak 1"
 • Push-ujte na github
+
+4. Git zadatak
+• Azurirajte tekstove zadataka
+• Obrisite Git_Zadatak1_updated.java fajl
+• Commitujte promenu kao "Delete class"
+• Push-ujte promenu
