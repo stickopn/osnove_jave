@@ -1,6 +1,8 @@
 package p31_05_2022;
 //OSNOVNA KLASA
-public class Vozilo {
+// abstract znaci da ona ne moze da se koristi u VoziloMain i da joj se dodeljuju parametri, zato sto je ona osnovna klasa
+//i koristi se samo za izvedene klase "new Vozilo" znaci ne moze da mu se dodele parametri u Main-u
+public abstract class Vozilo {
     //PROTEKTED MODIFIKATOR DAJE PRISTUP IZVEDENOJ KLASI (IZMEDJU PRIVATE I PUBLIC JE)
 //    PROTECTED znaci: dozvoli pristup ovim atributima klasi koja mene nasledjuje
     protected String registracija;
@@ -11,7 +13,7 @@ public class Vozilo {
     protected int maxBrzina;
 
 
-//    Defaultni konstruktor mora da se naglasi jer postoji i drugi sa parametrima, da nema ovaj drugi, onda defaultni bi se podrazumevao
+    //    Defaultni konstruktor mora da se naglasi jer postoji i drugi sa parametrima, da nema ovaj drugi, onda defaultni bi se podrazumevao
 //    kada se pozove iz izvedene klase
     public Vozilo() {
         System.out.println("Poziv konstruktora Vozilo.");
@@ -81,13 +83,14 @@ public class Vozilo {
         }
     }
 
-    public void stampaj() {
-        System.out.println("Vozilo");
-        System.out.println(this.brojVrata);
-        System.out.println(this.registracija);
-        System.out.println(this.brzina);
-        System.out.println(this.marka);
-        System.out.println(this.kubikaza);
-        System.out.println(this.maxBrzina);
-    }
+//    Stavljamo da bude abstract, zato sto se u svakoj izvedenoj klasi overajduje i abstraktnoj metodi ne treba telo metode
+//    zato se odmah zatvara. Sto znaci da ova metoda nema neku logiku vec je napisana samo da postoji, jer izvedene klase
+//    trebaju da imaju logiku za stampu.
+
+    public abstract void stampaj();
 }
+
+//Ukoliko neka klasa ima apstraktnu metodu ta klasa je automatski abstraksna,
+//dok ne mora metoda da bude ukoliko je klasa abstraktna a metoda nije!
+//Ali u izvedenim klasama mora da se overajduje metoda ili ce da izbacuje gresku,
+//da ti ponudi da ubacis overajd ili da ta klasa isto bude abstraktna

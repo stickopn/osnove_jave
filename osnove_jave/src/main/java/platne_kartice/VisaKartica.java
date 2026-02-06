@@ -33,6 +33,5 @@ public class VisaKartica extends PlatnaKartica {
     @Override
     public void stampaj() {
         System.out.println("Visa Card");
-        super.stampaj();
     }
 }

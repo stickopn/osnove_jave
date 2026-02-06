@@ -1,6 +1,6 @@
 package platne_kartice;
 
-public class PlatnaKartica {
+public abstract class PlatnaKartica {
     protected double suma;
     protected String brojKartice;
     protected int godina;
@@ -52,13 +52,9 @@ public class PlatnaKartica {
         this.suma += iznos; // this.suma = this.suma + iznos;
     }
 
-    public void izvrsiTransakciju(double iznos) {
-        this.suma -= iznos;
-    }
+    public abstract void izvrsiTransakciju(double iznos);
 
-    public void stampaj() {
-        System.out.println(this.brojKartice + ", $" + this.suma);
-    }
+    public abstract void stampaj();
 
 }
 
